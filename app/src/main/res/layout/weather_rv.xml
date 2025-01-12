@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/rectangle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_weight="1"
+            android:paddingTop="24dp"
+            >
+
+            <!-- Temperature Section -->
+
+            <!-- High and Low Temperature -->
+            <TextView
+                android:id="@+id/temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="20°"
+                android:textColor="#FFFFFF"
+                android:textSize="50sp"
+                />
+
+            <TextView
+                android:id="@+id/high_low_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="H: 21°   L: 19°"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:layout_gravity="start"
+                />
+
+            <!-- Location -->
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="10dp"
+                android:text="Toronto, Canada"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:layout_gravity="start"
+
+                />
+
+            <!-- Weather Icon and Description -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <!-- Weather Icon -->
+
+            <!-- Weather Description -->
+
+            <ImageView
+                android:id="@+id/weather_icon"
+                android:layout_width="144dp"
+                android:layout_height="144dp"
+                android:src="@drawable/moon_cloud_mid_rain" />
+
+            <TextView
+                android:id="@+id/weather_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="sans-serif"
+                android:text="Fast Wind"
+                android:textColor="#FFFFFF"
+                android:textSize="15sp"
+                android:layout_gravity="end"
+                android:layout_margin="15dp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

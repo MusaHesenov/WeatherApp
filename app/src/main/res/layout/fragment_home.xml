@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/background" />
+
+    <ImageView
+        android:id="@+id/imageHouse"
+        android:layout_width="309dp"
+        android:layout_height="315dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="90dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:srcCompat="@drawable/house" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Baku"
+            android:textColor="@color/white"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/temprature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="19º"
+            android:textColor="@color/white"
+            android:textSize="70sp" />
+
+        <TextView
+            android:id="@+id/dis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Mostly Clear"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+
+            <TextView
+                android:id="@+id/high"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="H:19º"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:id="@+id/low"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="L:16º"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="429dp"
+        android:layout_height="725dp"
+        android:layout_alignParentBottom="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.avito.android.blurlayout.BlurLayout
+            android:layout_width="438dp"
+            android:layout_height="338dp"
+            android:layout_gravity="bottom"
+            android:background="@drawable/sheet_bg"
+            app:blurLayout_blurRadius="25"
+            app:blurLayout_targetChildBackgroundCornerRadius="16dp"
+            >
+
+            <FrameLayout
+                android:id="@+id/sheet"
+                android:layout_width="438dp"
+                android:layout_height="338dp"
+                android:background="@drawable/sheet_bg"
+                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+                >
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="13dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_indicator" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rev"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="50dp"
+                    tools:listitem="@layout/item_list_rv" />
+
+                <RelativeLayout
+                    android:id="@+id/navBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/tapbarbackground"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                    <!-- Sol İkon -->
+                    <ImageView
+                        android:id="@+id/navLeftIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="40dp"
+                        android:src="@drawable/location_button" />
+
+                    <!-- Ortadaki Yüzer Buton -->
+                    <ImageView
+                        android:id="@+id/navCenterButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/button_background"
+                        android:src="@drawable/button_main"
+                        />
+
+                    <!-- Sağ İkon -->
+                    <ImageView
+                        android:id="@+id/navRightIcon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="40dp"
+                        android:src="@drawable/detail_button"
+
+                        />
+                </RelativeLayout>
+
+            </FrameLayout>
+
+        </com.avito.android.blurlayout.BlurLayout>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
