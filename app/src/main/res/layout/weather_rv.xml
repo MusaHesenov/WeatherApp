@@ -41,18 +41,36 @@
                 android:textSize="50sp"
                 />
 
-            <TextView
-                android:id="@+id/high_low_temp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:layout_marginStart="20dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="start"
                 android:layout_marginBottom="10dp"
-                android:text="H: 21°   L: 19°"
-                android:textColor="#FFFFFF"
-                android:textSize="16sp"
-                android:layout_gravity="start"
-                />
+                >
+
+
+                <TextView
+                    android:id="@+id/high"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="H:19º"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="20dp"/>
+
+                <TextView
+                    android:id="@+id/low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="L:16º"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginStart="10dp" />
+            </LinearLayout>
 
             <!-- Location -->
             <TextView

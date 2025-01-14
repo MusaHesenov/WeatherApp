@@ -27,11 +27,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/detailLayout"
         app:srcCompat="@drawable/house" />
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/detailLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -104,14 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.avito.android.blurlayout.BlurLayout
-            android:layout_width="438dp"
-            android:layout_height="338dp"
-            android:layout_gravity="bottom"
-            android:background="@drawable/sheet_bg"
-            app:blurLayout_blurRadius="25"
-            app:blurLayout_targetChildBackgroundCornerRadius="16dp"
-            >
+
 
             <FrameLayout
                 android:id="@+id/sheet"
@@ -181,7 +184,7 @@
 
             </FrameLayout>
 
-        </com.avito.android.blurlayout.BlurLayout>
+
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
