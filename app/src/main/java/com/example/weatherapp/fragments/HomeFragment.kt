@@ -78,17 +78,17 @@ class HomeFragment : Fragment() {
                         detailLayout.visibility = View.VISIBLE
                         data?.let {
                             statusTxt.text = it.weather?.get(0)?.main ?: "-"
-                            temprature.text = it.main?.temp.let {
+                            temprature.text =it.main?.temp.let {
                                 it?.let { it1 ->
                                     Math.round(it1).toString()
                                 }
                             } + "º"
-                            high.text = it.main?.tempMax.let {
+                            high.text = "H: "+it.main?.tempMax.let {
                                 it?.let { it1 ->
                                     Math.round(it1).toString()
                                 }
                             } + "º"
-                            low.text = it.main?.tempMin.let {
+                            low.text ="H: "+ it.main?.tempMin.let {
                                 it?.let { it1 ->
                                     Math.round(it1).toString()
                                 }
