@@ -11,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.example.weatherapp.databinding.ItemListRvBinding
 import com.example.weatherapp.model.ForecastResponseApi
 import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
 
@@ -44,10 +46,17 @@ class ForecastAdapter : RecyclerView.Adapter<ForecastAdapter.ViewHolder>() {
             else -> "-"
         }
         binding.nameDayTxt.text = dayOfWeekName
-        val hour = calendar.get(Calendar.HOUR_OF_DAY)
-        val amPm = if (hour < 12) "AM" else "PM"
-        val hour12 = calendar.get(Calendar.HOUR)
-        binding.hourTxt.text = hour12.toString() + amPm
+//        val hour = calendar.get(Calendar.HOUR_OF_DAY)
+//        val amPm = if (hour < 12) "AM" else "PM"
+//        val hour12 = calendar.get(Calendar.HOUR)
+
+        fun Long.toTime(): String {
+            val date = Date(this * 1000)
+            val format = SimpleDateFormat("HH:mm", Locale.getDefault())
+            return format.format(date)
+        }
+
+        binding.hourTxt.text = differ.currentList[position].dt?.toLong()?.toTime()               //*hour12.toString() + amPm
         binding.tempTxt.text =
             differ.currentList[position].main?.temp?.let { Math.round(it) }.toString() + "º"
 

@@ -109,7 +109,7 @@
                 android:src="@drawable/moon_cloud_mid_rain" />
 
             <TextView
-                android:id="@+id/weather_description"
+                android:id="@+id/statusTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

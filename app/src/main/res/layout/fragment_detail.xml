@@ -13,17 +13,19 @@
         android:id="@+id/toolbarWeather"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+
+            >
 
             <ImageView
-                android:id="@+id/animalCategoryBack"
+                android:id="@+id/detailBackBtn"
                 android:layout_width="55dp"
                 android:layout_height="55dp"
                 android:scaleType="centerInside"
@@ -41,9 +43,9 @@
                 android:text="Weather"
                 android:textColor="@color/white"
                 android:textSize="33sp"
-                app:layout_constraintBottom_toBottomOf="@+id/animalCategoryBack"
-                app:layout_constraintStart_toEndOf="@id/animalCategoryBack"
-                app:layout_constraintTop_toTopOf="@+id/animalCategoryBack" />
+                app:layout_constraintBottom_toBottomOf="@+id/detailBackBtn"
+                app:layout_constraintStart_toEndOf="@id/detailBackBtn"
+                app:layout_constraintTop_toTopOf="@+id/detailBackBtn" />
 
             <ImageView
                 android:id="@+id/weatherDetail"
@@ -100,7 +102,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/animalCategoryRv"
+        android:id="@+id/weatherRv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"

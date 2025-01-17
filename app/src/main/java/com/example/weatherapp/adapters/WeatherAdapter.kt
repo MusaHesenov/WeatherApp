@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.weatherapp.databinding.WeatherRvBinding
 import com.example.weatherapp.model.CurrentResponseApi
 import com.example.weatherapp.model.ForecastResponseApi
+import kotlin.math.roundToInt
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
 
@@ -16,9 +17,10 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.ViewHolder>() {
             fun bin(currentResponseApi: CurrentResponseApi?) {
                 binding.apply {
                     currentResponseApi?.let {
-                        temperature.text = currentResponseApi.main?.temp.toString()
-                        high.text = currentResponseApi.main?.tempMax.toString()
-                        low.text = currentResponseApi.main?.tempMin.toString()
+                        temperature.text = currentResponseApi.main?.temp?.roundToInt().toString()+ "°"
+                        high.text = "H: "+currentResponseApi.main?.tempMax?.roundToInt().toString()+ "°"
+                        low.text = "H: "+currentResponseApi.main?.tempMin?.roundToInt().toString()+ "°"
+                        statusTxt.text = currentResponseApi.weather?.get(0)?.main.toString()
                         location.text = currentResponseApi.name.toString()
                        // Glide.with(itemView).load(currentResponseApi.icon?.get(0)?.icon).into(weatherIcon)
                     }

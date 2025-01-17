@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".activities.MainActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/bgImage"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
@@ -21,7 +21,6 @@
         android:id="@+id/imageHouse"
         android:layout_width="309dp"
         android:layout_height="315dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="90dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -44,7 +43,7 @@
         android:id="@+id/detailLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="62dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +68,7 @@
             android:textSize="70sp" />
 
         <TextView
-            android:id="@+id/dis"
+            android:id="@+id/statusTxt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -80,8 +79,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="horizontal">
 
 
             <TextView
@@ -89,24 +88,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginEnd="10dp"
                 android:text="H:19º"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_marginEnd="10dp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/low"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginStart="10dp"
                 android:text="L:16º"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                android:layout_marginStart="10dp" />
+                android:textSize="20sp" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
         android:layout_width="429dp"
         android:layout_height="725dp"
         android:layout_alignParentBottom="true"
@@ -115,80 +115,113 @@
         app:layout_constraintStart_toStartOf="parent">
 
 
+        <FrameLayout
+            android:id="@+id/sheet"
+            android:layout_width="438dp"
+            android:layout_height="338dp"
+            android:background="@drawable/sheet_bg"
+            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-            <FrameLayout
-                android:id="@+id/sheet"
-                android:layout_width="438dp"
-                android:layout_height="338dp"
-                android:background="@drawable/sheet_bg"
-                app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
-                >
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="13dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_indicator" />
 
-                <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|top"
-                    android:layout_marginTop="13dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/ic_indicator" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center|top">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rev"
+                <TextView
+                    android:id="@+id/hourlyForecast"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="50dp"
-                    tools:listitem="@layout/item_list_rv" />
-
-                <RelativeLayout
-                    android:id="@+id/navBar"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/tapbarbackground"
-                    app:layout_constraintBottom_toBottomOf="parent">
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="80dp"
+                    android:text="Hourly Forecast"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
 
-                    <!-- Sol İkon -->
-                    <ImageView
-                        android:id="@+id/navLeftIcon"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginStart="40dp"
-                        android:src="@drawable/location_button" />
-
-                    <!-- Ortadaki Yüzer Buton -->
-                    <ImageView
-                        android:id="@+id/navCenterButton"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:background="@drawable/button_background"
-                        android:src="@drawable/button_main"
-                        />
-
-                    <!-- Sağ İkon -->
-                    <ImageView
-                        android:id="@+id/navRightIcon"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="40dp"
-                        android:src="@drawable/detail_button"
-
-                        />
-                </RelativeLayout>
-
-            </FrameLayout>
+                <TextView
+                    android:id="@+id/WeeklyForecast"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="80dp"
+                    android:text="Weekly Forecast"
+                    android:textColor="@color/white"
+                    android:textSize="13sp" />
+            </LinearLayout>
 
 
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_marginTop="53dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/separator" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/forecastRv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                tools:listitem="@layout/item_list_rv" />
+
+            <RelativeLayout
+                android:id="@+id/navBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/tapbarbackground"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <!-- Sol İkon -->
+                <ImageView
+                    android:id="@+id/navLeftIcon"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="40dp"
+                    android:src="@drawable/location_button" />
+
+                <!-- Ortadaki Yüzer Buton -->
+                <ImageView
+                    android:id="@+id/navCenterButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/button_background"
+                    android:src="@drawable/button_main" />
+
+                <!-- Sağ İkon -->
+                <ImageView
+                    android:id="@+id/detailWeathers"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="40dp"
+                    android:src="@drawable/detail_button"
+
+                    />
+            </RelativeLayout>
+
+        </FrameLayout>
 
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

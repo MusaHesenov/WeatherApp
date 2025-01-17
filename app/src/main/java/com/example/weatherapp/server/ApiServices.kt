@@ -13,7 +13,7 @@ interface ApiServices {
         @Query("lat") lat:Double,
         @Query("lon") lon:Double,
         @Query("appid") ApiKey:String,
-
+        @Query("units") units:String = "metric"
     ): Call<CurrentResponseApi>
 
 
@@ -22,7 +22,7 @@ interface ApiServices {
         @Query("lat") lat:Double,
         @Query("lon") lon:Double,
         @Query("appid") ApiKey:String,
-
+        @Query("units") units:String = "metric"
     ): Call<ForecastResponseApi>
 
 
@@ -30,7 +30,7 @@ interface ApiServices {
     fun getCountryWeather(
         @Query("q") country:String,
         @Query("appid") ApiKey:String,
-
+        @Query("units") units:String = "metric"
         ): Call<CurrentResponseApi>
 
 }
