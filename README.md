@@ -35,7 +35,7 @@ Click the Run button to launch the app.
 
 ## Screenshots
 
-| Home Screen | Search Screen | Forecast Screen |
-|-------------|---------------|-----------------|
+| Home Screen | Search Screen | 
+|-------------|---------------|
 | ![Home Screen](app/src/main/res/drawable/home.png) | ![Search Screen](app/src/main/res/drawable/search.png) |
 
